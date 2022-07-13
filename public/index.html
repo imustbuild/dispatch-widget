@@ -229,7 +229,7 @@
       <div class="Page-content">
         <div class="Page-content-wrapper">
           <div id="app">
-            <section class="Widget" x-data="widget" x-init="getReasons()">
+            <section class="Widget" x-data="widget" x-init="getReasons()" x-show="!loading">
               <section class="Widget-step" x-show="step===1">
                 <div class="Widget-step-title">
                   What can we help you <span>with today?</span>
@@ -306,36 +306,36 @@
                 </div>
                 <div class="Widget-schedule">
                   <div class="Widget-schedule-day">
-                    <div class="Widget-step-subtitle">Today (M/D)</div>
+                    <div class="Widget-step-subtitle">Today</div>
                     <ul class="Widget-list">
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Morning M/D')" disabled>Morning (9-11am)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Morning')" disabled>Morning (9-11am)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Midday M/D')">Midday (12-2pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Midday')">Midday (12-2pm)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Afternoon M/D')">Afternoon (3-5pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Afternoon')">Afternoon (3-5pm)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Evening M/D')">Evening (5-11pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Evening')">Evening (5-11pm)</button>
                       </li>
                     </ul>
                   </div>
                   <div class="Widget-schedule-day">
-                    <div class="Widget-step-subtitle">Tomorrow (M/D)</div>
+                    <div class="Widget-step-subtitle">Tomorrow</div>
                     <ul class="Widget-list">
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Morning M/D')">Morning (9-11am)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Tomorrow','Morning')">Morning (9-11am)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Midday M/D')">Midday (12-2pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Tomorrow','Midday')">Midday (12-2pm)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Afternoon M/D')">Afternoon (3-5pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Tomorrow','Afternoon')">Afternoon (3-5pm)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Evening M/D')">Evening (5-11pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Tomorrow','Evening')">Evening (5-11pm)</button>
                       </li>
                     </ul>
                   </div>
@@ -349,75 +349,23 @@
     <script>
       document.addEventListener('alpine:init', () => {
         Alpine.data('widget', () => ({
+          loading: false,
           step: 1,
           input: "",
           results: true,
           suggestions: [],
           more: false,
           reason: "",
-          date: "",
-          reasons: [
-            // {primary:false,value:"Acid reflux",label:"Acid reflux"},
-            // {primary:false,value:"Acne",label:"Acne"},
-            // {primary:false,value:"Allergic reaction",label:"Allergic reaction"},
-            // {primary:true,value:"Allergies",label:"Allergies"},
-            // {primary:false,value:"Animal bite",label:"Animal bite"},
-            // {primary:false,value:"Anxiety",label:"Anxiety"},
-            // {primary:false,value:"Asthma",label:"Asthma"},
-            // {primary:false,value:"Back pain",label:"Back pain"},
-            // {primary:false,value:"Canker sore",label:"Canker sore"},
-            // {primary:true,value:"Cold",label:"Cold"},
-            // {primary:false,value:"Coronavirus (COVID-19): education",label:"Coronavirus (COVID-19): education"},
-            {primary:true,value:"Coronavirus (COVID-19): evaluation",label:"Coronavirus (COVID-19): evaluation"},
-            // {primary:true,value:"Cough",label:"Cough"},
-            // {primary:false,value:"Depression: evaluation",label:"Depression: evaluation"},
-            // {primary:false,value:"Depression: treatment",label:"Depression: treatment"},
-            // {primary:false,value:"Diabetes",label:"Diabetes"},
-            // {primary:false,value:"Diarrhea",label:"Diarrhea"},
-            // {primary:false,value:"Dizziness",label:"Dizziness"},
-            // {primary:false,value:"Earache",label:"Earache"},
-            // {primary:false,value:"Eczema",label:"Eczema"},
-            // {primary:false,value:"Erectile dysfunction",label:"Erectile dysfunction"},
-            // {primary:false,value:"Eye issue",label:"Eye issue"},
-            // {primary:false,value:"Fever",label:"Fever"},
-            // {primary:false,value:"General lab testing",label:"General lab testing"},
-            // {primary:false,value:"Gout",label:"Gout"},
-            // {primary:false,value:"Hair loss",label:"Hair loss"},
-            // {primary:false,value:"Headache",label:"Headache"},
-            // {primary:false,value:"High blood pressure",label:"High blood pressure"},
-            // {primary:false,value:"High cholesterol",label:"High cholesterol"},
-            // {primary:false,value:"HIV PrEP",label:"HIV PrEP"},
-            // {primary:true,value:"Influenza (flu)",label:"Influenza (flu)"},
-            // {primary:false,value:"Ingrown nail",label:"Ingrown nail"},
-            // {primary:false,value:"Insect bite or sting",label:"Insect bite or sting"},
-            // {primary:false,value:"Insomnia",label:"Insomnia"},
-            // {primary:false,value:"Muscle or joint injury",label:"Muscle or joint injury"},
-            // {primary:false,value:"Muscle or joint pain",label:"Muscle or joint pain"},
-            // {primary:false,value:"Nail fungus",label:"Nail fungus"},
-            // {primary:true,value:"Nasal congestion",label:"Nasal congestion"},
-            // {primary:false,value:"Neck pain",label:"Neck pain"},
-            // {primary:false,value:"Other injury",label:"Other injury"},
-            // {primary:false,value:"Other medication refill",label:"Other medication refill"},
-            // {primary:false,value:"Other reason",label:"Other reason"},
-            // {primary:false,value:"Other skin issue",label:"Other skin issue"},
-            // {primary:true,value:"Rash",label:"Rash"},
-            // {primary:false,value:"Refill for anxiety medication",label:"Refill for anxiety medication"},
-            // {primary:false,value:"Refill for depression medication",label:"Refill for depression medication"},
-            // {primary:false,value:"Refill for diabetes medication: IF HISTORICAL AND UNCHANGED",label:"Refill for diabetes medication: IF HISTORICAL AND UNCHANGED"},
-            // {primary:false,value:"Refill for high blood pressure med: IF HISTORICAL AND UNCHANGED",label:"Refill for high blood pressure med: IF HISTORICAL AND UNCHANGED"},
-            // {primary:false,value:"Shortness of breath",label:"Shortness of breath"},
-            // {primary:false,value:"Skin infection",label:"Skin infection"},
-            // {primary:false,value:"Smoking cessation",label:"Smoking cessation"},
-            // {primary:true,value:"Sore throat",label:"Sore throat"},
-            // {primary:false,value:"STD testing or treatment",label:"STD testing or treatment"},
-            // {primary:false,value:"Stomach pain",label:"Stomach pain"},
-            // {primary:false,value:"Thyroid issue",label:"Thyroid issue"},
-            // {primary:false,value:"Tooth pain",label:"Tooth pain"},
-            // {primary:false,value:"Travel advice",label:"Travel advice"},
-            // {primary:false,value:"Urinary tract infection (UTI) SIMPLE AND UNCOMPLICATED",label:"Urinary tract infection (UTI) SIMPLE AND UNCOMPLICATED"},
-            // {primary:false,value:"Vomiting",label:"Vomiting"},
-            // {primary:false,value:"Weight loss management",label:"Weight loss management"},
-          ],
+          reasons: [],
+          getReasons: function(){
+            this.loading = true;
+            fetch('https://merry-treacle-8044cf.netlify.app/api/1/reasons')
+              .then(response => response.json())
+              .then(data => {
+                this.reasons = data;
+                this.loading = false;
+              });
+          },
           getSuggestions: function(value){
             const match = value.trim();
             const input = this.input.trim();
@@ -432,21 +380,6 @@
               this.suggestions = [];
             }
           },
-          getReasons: function(){
-            let that = this;
-            fetch('https://merry-treacle-8044cf.netlify.app/api/1/reasons')
-              .then(response => response.json())
-              .then(data => {
-                // console.log(data);
-                that.reasons = data;
-                // return data;
-              });
-          },
-          setReasons: function(data){
-            console.log(typeof this.reasons);
-            console.log(data[0]);
-            this.reasons = [...data];
-          },
           setReason: function(label,value){
             this.input = label;
             this.reason = value;
@@ -454,9 +387,12 @@
             this.step = 2;
             console.log(`Setting the reason to ${value}`);
           },
-          setDate: function(value){
-            this.date = value;
-            console.log(`Scheduling an appointment for ${this.reason} on ${value}`);
+          setDate: function(date,time){
+            const c = encodeURIComponent(this.reason.toLowerCase());
+            const d = encodeURIComponent(date.toLowerCase());
+            const t = encodeURIComponent(time.toLowerCase());
+            location.href = `https://request.dispatchhealth.com/?condition=${c}&date=${d}&time=${t}`;
+            console.log(`Scheduling an appointment for ${this.reason} on ${date} ${time}`);
           },
         }));
       });
