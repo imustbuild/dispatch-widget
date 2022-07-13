@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Urgent Medical Care - Insurance Accepted | DispatchHealth</title>
     <style>
+      html {
+        font-size:  10px;
+      }
       body {
         -webkit-font-smoothing: antialiased;
         font-size: 1.8rem;
@@ -50,165 +53,8 @@
         justify-content: center;
         align-items: center;
       }
-
-      .Widget {
-        width: 100%;
-        max-width: 600px;
-        margin: auto;
-        text-align: center;
-        padding: 1rem;
-      }
-      .Widget-step {
-        margin: 1em 0;
-      }
-      .Widget-step-title {
-        font-family: "Bree Serif", serif;
-        margin-bottom: 1em;
-      }
-      .Widget-step-title span {
-        display: inline-block;
-      }
-      .Widget-step-subtitle {
-        font-family: "Bree Serif", serif;
-        font-size: .75em;
-        margin: .5em 0 0;
-      }
-
-      *[class^="Widget-button"] {
-        width: 100%;
-        border: 1px solid transparent;
-        background: #0088D8;
-        color: #fff;
-        border-radius: 4px;
-        padding: .5em 1em;
-        font-weight: bold;
-        font-size: .5em;
-        line-height: 1.4;
-        text-align: inherit;
-      }
-      .Widget-button--back svg {
-        width: 24px;
-        margin-right: .5em;
-      }
-      *[class^="Widget-button"] span {
-        display: inline-block;
-      }
-      *[class^="Widget-button"]:disabled {
-        background: #ccc;
-        color: #555;
-      }
-      *[class^="Widget-button"]:not(:disabled):hover {
-        background: #0058A8;
-        cursor: pointer;
-      }
-      *[class$="--secondary"] {
-        background: transparent;
-        color: #0088D8;
-      }
-      *[class$="--secondary"]:not(:disabled):hover {
-        background: transparent;
-        color: #0088D8;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-      *[class$="--back"] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width:  fit-content;
-        margin: auto;
-        background: transparent;
-        color: orange;
-      }
-      *[class$="--back"]:not(:disabled):hover {
-        background: transparent;
-        color: orange;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-      .Widget-search {
-        margin-bottom: 1em;
-      }
-
-      .Widget-search-control {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid orange;
-      }
-      .Widget-search-icon {
-        width: 20px;
-        height: 20px;
-        color: orange;
-      }
-      .Widget-search-input {
-        flex-grow: 1;
-        font-size: 16px;
-        line-height: 2;
-        padding: .5em 1em;
-        border: none;
-        background: transparent;
-      }
-      .Widget-search-results {
-        position: relative;
-        z-index: 100;
-        text-align: left;
-      }
-      .Widget-search-submit {
-        width: auto;
-      }
-
-      .Widget-suggestions {
-        position: absolute;
-        left: 0;
-        right: 0;
-        background: #f3f3f4;
-      }
-      *[class^="Widget-list"] {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      *[class$="--2col"] {
-        columns: 100px 2;
-        column-gap: 10px;
-      }
-      .Widget-list-item {
-        margin: 0;
-        padding: 0;
-      }
-
-      .Widget-reasons {
-        position: relative;
-      }
-      .Widget-reasons-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #f3f3f4;
-        opacity: .9;
-      }
-
-      .Widget-schedule {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 10px;
-        margin-top: -.5em;
-      }
-
-      @media ( max-width: 767px ) {
-        *[class$="--2col"] {
-          columns: 100px 1;
-        }
-        .Widget-schedule {
-          display: block;
-        }
-      }
     </style>
     <link href="//fonts.googleapis.com/css?family=Open Sans:300,400,700|Bree Serif:300,400,700&amp;display=swap" as="style" rel="stylesheet" onload="this.rel=&quot;stylesheet&quot;" crossorigin="anonymous">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
     <div class="Page">
@@ -229,6 +75,170 @@
       <div class="Page-content">
         <div class="Page-content-wrapper">
           <div id="app">
+
+
+            <!-- START WIDGET COPY -->
+            <style>
+              .Widget {
+                width: 100%;
+                max-width: 640px;
+                margin: auto;
+                text-align: center;
+                padding: 16px;
+                font-size: 28px;
+                line-height: 1.5;
+              }
+              .Widget-step {
+                margin: 1em 0;
+              }
+              .Widget-step-title {
+                font-family: "Bree Serif", serif;
+                margin-bottom: 1em;
+              }
+              .Widget-step-title span {
+                display: inline-block;
+              }
+              .Widget-step-subtitle {
+                font-family: "Bree Serif", serif;
+                font-size: .75em;
+                margin: .5em 0 0;
+              }
+
+              *[class^="Widget-button"] {
+                width: 100%;
+                border: 1px solid transparent;
+                background: #0088D8;
+                color: #fff;
+                border-radius: 4px;
+                padding: .5em 1em;
+                font-family: "Open Sans", Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: .5em;
+                line-height: 1.4;
+                text-align: inherit;
+              }
+              .Widget-button--back svg {
+                width: 24px;
+                margin-right: .5em;
+              }
+              *[class^="Widget-button"] span {
+                display: inline-block;
+              }
+              *[class^="Widget-button"]:disabled {
+                background: #ccc;
+                color: #555;
+              }
+              *[class^="Widget-button"]:not(:disabled):hover {
+                background: #0058A8;
+                cursor: pointer;
+              }
+              *[class$="--secondary"] {
+                background: transparent;
+                color: #0088D8;
+              }
+              *[class$="--secondary"]:not(:disabled):hover {
+                background: transparent;
+                color: #0088D8;
+                text-decoration: underline;
+                cursor: pointer;
+              }
+              *[class$="--back"] {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:  fit-content;
+                margin: auto;
+                background: transparent;
+                color: orange;
+              }
+              *[class$="--back"]:not(:disabled):hover {
+                background: transparent;
+                color: orange;
+                text-decoration: underline;
+                cursor: pointer;
+              }
+
+              .Widget-search {
+                margin-bottom: 1em;
+              }
+
+              .Widget-search-control {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid orange;
+              }
+              .Widget-search-icon {
+                width: 20px;
+                height: 20px;
+                color: orange;
+              }
+              .Widget-search-input {
+                flex-grow: 1;
+                font-family: "Open Sans", Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                line-height: 2;
+                padding: .5em 1em;
+                border: none;
+                background: transparent;
+              }
+              .Widget-search-results {
+                position: relative;
+                z-index: 100;
+                text-align: left;
+              }
+              .Widget-search-submit {
+                width: auto;
+              }
+
+              .Widget-suggestions {
+                position: absolute;
+                left: 0;
+                right: 0;
+                background: #f3f3f4;
+              }
+              *[class^="Widget-list"] {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+              }
+              *[class$="--2col"] {
+                columns: 100px 2;
+                column-gap: 10px;
+              }
+              .Widget-list-item {
+                margin: 0;
+                padding: 0;
+              }
+
+              .Widget-reasons {
+                position: relative;
+              }
+              .Widget-reasons-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #f3f3f4;
+                opacity: .9;
+              }
+
+              .Widget-schedule {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-gap: 10px;
+                margin-top: -.5em;
+              }
+
+              @media ( max-width: 767px ) {
+                *[class$="--2col"] {
+                  columns: 100px 1;
+                }
+                .Widget-schedule {
+                  display: block;
+                }
+              }
+            </style>
             <section class="Widget" x-data="widget" x-init="getReasons()" x-show="!loading">
               <section class="Widget-step" x-show="step===1">
                 <div class="Widget-step-title">
@@ -342,71 +352,77 @@
                 </div>
               </section>
             </section>
+            <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+            <script>
+              document.addEventListener('alpine:init', () => {
+                Alpine.data('widget', () => ({
+                  loading: false,
+                  step: 1,
+                  input: "",
+                  results: true,
+                  suggestions: [],
+                  more: false,
+                  reason: "",
+                  reasons: [],
+                  now: new Date(),
+                  today: function(){
+                    const today = new Date();
+                    return `${today.getMonth() + 1}/${today.getDate()}`;
+                  },
+                  tomorrow: function(){
+                    const today = new Date();
+                    const tomorrow =  new Date(today);
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    return `${today.getMonth() + 1}/${tomorrow.getDate()}`;
+                  },
+                  getReasons: function(){
+                    this.loading = true;
+                    fetch('https://dispatchhealth-widget.netlify.app/api/1/reasons')
+                      .then(response => response.json())
+                      .then(data => {
+                        this.reasons = data.sort((a, b) => (a.label > b.label ? 1 : a.label.toLowerCase() < b.label.toLowerCase() ? -1 : 0));
+                        this.loading = false;
+                      });
+                  },
+                  getSuggestions: function(value){
+                    const match = value.trim();
+                    const input = this.input.trim();
+                    const reason = this.reason.trim()
+                    if ( input !== reason && input !== "") {
+                      const other = [{ other: true }];
+                      const suggestions = this.reasons.filter(obj => obj.label.toLowerCase().indexOf(match) > -1).slice(0,5);
+                      this.suggestions = suggestions.length > 0 ? suggestions : other;
+                      this.reason = "";
+                      console.log(`Getting suggestions for ${value}`);
+                    } else {
+                      this.suggestions = [];
+                    }
+                  },
+                  setReason: function(label,value){
+                    this.input = label;
+                    this.reason = value;
+                    this.suggestions = [];
+                    this.step = 2;
+                    console.log(`Setting the reason to ${value}`);
+                  },
+                  setDate: function(date,time){
+                    const c = encodeURIComponent(this.reason.toLowerCase());
+                    const d = encodeURIComponent(date.toLowerCase());
+                    const t = encodeURIComponent(time.toLowerCase());
+                    location.href = `https://request.dispatchhealth.com/?condition=${c}&date=${d}&time=${t}`;
+                    console.log(`Scheduling an appointment for ${this.reason} on ${date} ${time}`);
+                  },
+                }));
+              });
+            </script>
+
+            <!-- END WIDGET COPY -->
+
+
+
           </div>
         </div>
       </div>
     </div>
-    <script>
-      document.addEventListener('alpine:init', () => {
-        Alpine.data('widget', () => ({
-          loading: false,
-          step: 1,
-          input: "",
-          results: true,
-          suggestions: [],
-          more: false,
-          reason: "",
-          reasons: [],
-          now: new Date(),
-          today: function(){
-            const today = new Date();
-            return `${today.getMonth() + 1}/${today.getDate()}`;
-          },
-          tomorrow: function(){
-            const today = new Date();
-            const tomorrow =  new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            return `${today.getMonth() + 1}/${tomorrow.getDate()}`;
-          },
-          getReasons: function(){
-            this.loading = true;
-            fetch('https://dispatchhealth-widget.netlify.app/api/1/reasons')
-              .then(response => response.json())
-              .then(data => {
-                this.reasons = data.sort((a, b) => (a.label > b.label ? 1 : a.label.toLowerCase() < b.label.toLowerCase() ? -1 : 0));
-                this.loading = false;
-              });
-          },
-          getSuggestions: function(value){
-            const match = value.trim();
-            const input = this.input.trim();
-            const reason = this.reason.trim()
-            if ( input !== reason && input !== "") {
-              const other = [{ other: true }];
-              const suggestions = this.reasons.filter(obj => obj.label.toLowerCase().indexOf(match) > -1).slice(0,5);
-              this.suggestions = suggestions.length > 0 ? suggestions : other;
-              this.reason = "";
-              console.log(`Getting suggestions for ${value}`);
-            } else {
-              this.suggestions = [];
-            }
-          },
-          setReason: function(label,value){
-            this.input = label;
-            this.reason = value;
-            this.suggestions = [];
-            this.step = 2;
-            console.log(`Setting the reason to ${value}`);
-          },
-          setDate: function(date,time){
-            const c = encodeURIComponent(this.reason.toLowerCase());
-            const d = encodeURIComponent(date.toLowerCase());
-            const t = encodeURIComponent(time.toLowerCase());
-            location.href = `https://request.dispatchhealth.com/?condition=${c}&date=${d}&time=${t}`;
-            console.log(`Scheduling an appointment for ${this.reason} on ${date} ${time}`);
-          },
-        }));
-      });
-    </script>
   </body>
 </html>
