@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/1/reasons"
+  to = "/.netlify/functions/api-v1_reasons"
+  status = 200
