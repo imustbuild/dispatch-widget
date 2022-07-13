@@ -3,7 +3,7 @@ const { API_AIRTABLE_KEY } = process.env;
 const API_ENDPOINT = `https://api.airtable.com/v0/app6AdLXGbubsrirh/Conditions?api_key=${API_AIRTABLE_KEY}`;
 
 exports.handler = async (event, context) => {
-  let url = API_ENDPOINT;
+  const url = API_ENDPOINT;
   const results = [];
 
   try {
@@ -21,7 +21,6 @@ exports.handler = async (event, context) => {
       };
       results.push(result);
     });
-
   } catch (err) {
     return {
       headers: {
