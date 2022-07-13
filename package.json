@@ -1,19 +1,11 @@
 {
   "name": "dispatch-widget",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://imustbuild@github.com/imustbuild/dispatch-widget.git"
-  },
-  "author": "Marc Sexton",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/imustbuild/dispatch-widget/issues"
-  },
-  "homepage": "https://github.com/imustbuild/dispatch-widget#readme"
+  "devDependencies": {
+    "node-fetch": "^3.2.8"
+  }
 }
