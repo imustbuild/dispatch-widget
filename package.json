@@ -16,7 +16,4 @@
     "url": "https://github.com/imustbuild/dispatch-widget/issues"
   },
   "homepage": "https://github.com/imustbuild/dispatch-widget#readme",
-  "dependencies": {
-    "node-fetch": "^3.2.8"
-  }
 }
