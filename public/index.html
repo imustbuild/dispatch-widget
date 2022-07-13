@@ -360,13 +360,13 @@
           now: new Date(),
           today: function(){
             const today = new Date();
-            return `${today.getMonth()}/${today.getDate()}`;
+            return `${today.getMonth() + 1}/${today.getDate()}`;
           },
           tomorrow: function(){
             const today = new Date();
             const tomorrow =  new Date(today);
             tomorrow.setDate(tomorrow.getDate() + 1);
-            return `${today.getMonth()}/${tomorrow.getDate()}`;
+            return `${today.getMonth() + 1}/${tomorrow.getDate()}`;
           },
           getReasons: function(){
             this.loading = true;
