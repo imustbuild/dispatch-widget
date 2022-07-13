@@ -15,8 +15,8 @@ exports.handler = async (event, context) => {
     data.records.map((item) => {
       const fields = item.fields;
       let result = {
-        id: fields.Id,
-        label: fields.Condition,
+        id: fields.Id.trim(),
+        label: fields.Condition.trim(),
         primary: fields["Primary Topic"] === true,
       };
       results.push(result);
