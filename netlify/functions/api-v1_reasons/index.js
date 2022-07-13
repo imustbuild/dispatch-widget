@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
       let result = {
         id: fields.Id,
         label: fields.Condition,
-        primary: fields["Primary Topic"],
+        primary: fields["Primary Topic"] === true,
       };
       results.push(result);
     });
