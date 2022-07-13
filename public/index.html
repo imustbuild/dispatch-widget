@@ -373,10 +373,9 @@
             fetch('https://dispatchhealth-widget.netlify.app/api/1/reasons')
               .then(response => response.json())
               .then(data => {
-                this.reasons = data;
+                this.reasons = data.sort((a, b) => (a.label > b.label ? 1 : a.label.toLowerCase() < b.label.toLowerCase() ? -1 : 0));
                 this.loading = false;
               });
-            console.log(this.now.getHours())
           },
           getSuggestions: function(value){
             const match = value.trim();
