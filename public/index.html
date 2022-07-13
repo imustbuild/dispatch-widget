@@ -306,24 +306,24 @@
                 </div>
                 <div class="Widget-schedule">
                   <div class="Widget-schedule-day">
-                    <div class="Widget-step-subtitle">Today</div>
+                    <div class="Widget-step-subtitle">Today (<span x-text="today()"></span>)</div>
                     <ul class="Widget-list">
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Morning')" disabled>Morning (9-11am)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Morning')" x-bind:disabled="now.getHours() > 9">Morning (9-11am)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Midday')">Midday (12-2pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Midday')" x-bind:disabled="now.getHours() > 12">Midday (12-2pm)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Afternoon')">Afternoon (3-5pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Afternoon')" x-bind:disabled="now.getHours() > 15">Afternoon (3-5pm)</button>
                       </li>
                       <li class="Widget-list-item">
-                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Evening')">Evening (5-11pm)</button>
+                        <button class="Widget-button" type="button" x-on:click="setDate('Today','Evening')" x-bind:disabled="now.getHours() > 17">Evening (5-11pm)</button>
                       </li>
                     </ul>
                   </div>
                   <div class="Widget-schedule-day">
-                    <div class="Widget-step-subtitle">Tomorrow</div>
+                    <div class="Widget-step-subtitle">Tomorrow (<span x-text="tomorrow()"></span>)</div>
                     <ul class="Widget-list">
                       <li class="Widget-list-item">
                         <button class="Widget-button" type="button" x-on:click="setDate('Tomorrow','Morning')">Morning (9-11am)</button>
@@ -357,6 +357,17 @@
           more: false,
           reason: "",
           reasons: [],
+          now: new Date(),
+          today: function(){
+            const today = new Date();
+            return `${today.getMonth()}/${today.getDate()}`;
+          },
+          tomorrow: function(){
+            const today = new Date();
+            const tomorrow =  new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            return `${today.getMonth()}/${tomorrow.getDate()}`;
+          },
           getReasons: function(){
             this.loading = true;
             fetch('https://merry-treacle-8044cf.netlify.app/api/1/reasons')
@@ -365,6 +376,7 @@
                 this.reasons = data;
                 this.loading = false;
               });
+            console.log(this.now.getHours())
           },
           getSuggestions: function(value){
             const match = value.trim();
