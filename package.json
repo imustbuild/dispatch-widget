@@ -6,6 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "node-fetch": "^3.2.8"
+    "node-fetch": "^2.0.0"
   }
 }
