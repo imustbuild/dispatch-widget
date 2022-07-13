@@ -370,7 +370,7 @@
           },
           getReasons: function(){
             this.loading = true;
-            fetch('https://merry-treacle-8044cf.netlify.app/api/1/reasons')
+            fetch('https://dispatchhealth-widget.netlify.app/api/1/reasons')
               .then(response => response.json())
               .then(data => {
                 this.reasons = data;
